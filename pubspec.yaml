@@ -82,9 +82,19 @@ flutter:
     - assets/video/video1.mp4
     - assets/video/video2.mp4
     - assets/video/video3.mp4
+    - assets/video/video4.mp4
+    - assets/video/video5.mp4
+    - assets/video/video6.mp4
+    - assets/video/video7.mp4
+    - assets/video/video8.mp4
     - assets/pdf/BAB_1.pdf
     - assets/pdf/BAB_2.pdf
     - assets/pdf/BAB_3.pdf
+    - assets/pdf/BAB_4.pdf
+    - assets/pdf/BAB_5.pdf
+    - assets/pdf/BAB_6.pdf
+    - assets/pdf/BAB_7.pdf
+    - assets/pdf/BAB_8.pdf
     - assets/images/feedback.png
   uses-material-design: true
 

@@ -166,6 +166,7 @@ class QuestionView extends GetView<QuestionController> {
                                       if (noQuestion != 2) {
                                         noQuestion.value++;
                                       } else {
+                                        noQuestion.value = 0;
                                         Get.toNamed(Routes.FEEDBACK);
                                       }
                                     },

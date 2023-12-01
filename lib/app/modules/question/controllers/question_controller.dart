@@ -14,4 +14,16 @@ class QuestionController extends GetxController {
     selectedOption.value = option;
   }
 
+  @override
+  void onClose() {
+    selectedOption = ''.obs;
+    super.onClose();
+  }
+
+  @override
+  void dispose() {
+    selectedOption = ''.obs;
+    super.dispose();
+  }
+
 }

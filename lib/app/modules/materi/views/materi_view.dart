@@ -13,6 +13,8 @@ class MateriView extends GetView<MateriController> {
 
   @override
   Widget build(BuildContext context) {
+    final currentLevel = controller.currentLevel;
+    //print(dataCon.dummyMateri2[currentLevel.value]["bab"][0]);
     return Scaffold(
       backgroundColor: Color(0xFF043873),
       body: SafeArea(
@@ -21,122 +23,142 @@ class MateriView extends GetView<MateriController> {
             navbar(),
             Expanded(
               child: SingleChildScrollView(
+                controller: controller.scrollController,
                 child: Column(
                   children: [
-                    ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: dataCon.dummyMateri.length,
-                      itemBuilder: (context, index) {
-                        final category = dataCon.dummyMateri[index]["category"];
-                        final title = dataCon.dummyMateri[index]["title"];
-                        final video = dataCon.dummyMateri[index]["video"];
-                        final deskripsi =
-                            dataCon.dummyMateri[index]["deskripsi"];
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 100, vertical: 25),
-                          child: Container(
-                            height: 600,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(60),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(30),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        category,
-                                        style: interFont.copyWith(
-                                            fontSize: 30,
-                                            color: Color(0xFF667080)),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 10),
-                                        child: Text(
-                                          title,
+                    Obx(() {
+                      return ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: dataCon
+                            .dummyMateri2[currentLevel.value]["bab"].length,
+                        itemBuilder: (context, index) {
+                          final category =
+                              dataCon.dummyMateri2[currentLevel.value]["bab"]
+                                  [index]["category"];
+                          final title = dataCon.dummyMateri2[currentLevel.value]
+                              ["bab"][index]["title"];
+                          final video = dataCon.dummyMateri2[currentLevel.value]
+                              ["bab"][index]["video"];
+                          final deskripsi =
+                              dataCon.dummyMateri2[currentLevel.value]["bab"]
+                                  [index]["deskripsi"];
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 100, vertical: 25),
+                            child: Container(
+                              height: 600,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(60),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(30),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          category,
                                           style: interFont.copyWith(
-                                              fontSize: 35,
-                                              fontWeight: FontWeight.w600),
+                                              fontSize: 30,
+                                              color: Color(0xFF667080)),
                                         ),
-                                      ),
-                                      Container(
-                                        width: 800,
-                                        child: Text(
-                                          deskripsi,
-                                          style:
-                                              interFont.copyWith(fontSize: 20),
-                                          textAlign: TextAlign.justify,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(top: 60),
-                                        child: SizedBox(
-                                          height: 50,
-                                          width: 170,
-                                          child: ElevatedButton(
-                                            style: ElevatedButton.styleFrom(
-                                              shape: RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10)),
-                                              backgroundColor:
-                                                  Color(0xFFFF384A),
-                                            ),
-                                            onPressed: () {
-                                              Get.toNamed(Routes.QUESTION,arguments: dataCon.dummyMateri[index]);
-                                            },
-                                            child: Text(
-                                              "Quiz",
-                                              style: interFont.copyWith(
-                                                  fontSize: 20,
-                                                  color: Colors.white),
-                                            ),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 10),
+                                          child: Text(
+                                            title,
+                                            style: interFont.copyWith(
+                                                fontSize: 35,
+                                                fontWeight: FontWeight.w600),
                                           ),
                                         ),
-                                      )
-                                    ],
-                                  ),
-                                  Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Container(
+                                        Container(
+                                          width: 800,
+                                          child: Text(
+                                            deskripsi,
+                                            style: interFont.copyWith(
+                                                fontSize: 20),
+                                            textAlign: TextAlign.justify,
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 60),
+                                          child: SizedBox(
+                                            height: 50,
+                                            width: 170,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10)),
+                                                backgroundColor:
+                                                    Color(0xFFFF384A),
+                                              ),
+                                              onPressed: () {
+                                                Get.toNamed(Routes.QUESTION,
+                                                    arguments: dataCon
+                                                                .dummyMateri2[
+                                                            currentLevel.value]
+                                                        ["bab"][index]);
+                                              },
+                                              child: Text(
+                                                "Quiz",
+                                                style: interFont.copyWith(
+                                                    fontSize: 20,
+                                                    color: Colors.white),
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Container(
                                           height: 200,
                                           width: 300,
                                           child: Chewie(
-                                              controller: controller
-                                                  .setStreamAnime(video))),
-                                      InkWell(
-                                        onTap: () {
-                                          controller.downloadMateri(dataCon.dummyMateri[index]["category"], dataCon.dummyMateri[index]["materi"]);
-                                        },
-                                        child: Container(
-                                          height: 220,
-                                          width: 300,
-                                          child: Image.asset(
-                                            "assets/images/materi.png",
-                                            fit: BoxFit.contain,
+                                            controller: controller
+                                                .setStreamAnime(video),
                                           ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                        InkWell(
+                                          onTap: () {
+                                            controller.downloadMateri(
+                                                dataCon.dummyMateri2[currentLevel.value]
+                                                    ["bab"][index]["category"],
+                                                dataCon.dummyMateri2[currentLevel.value]
+                                                    ["bab"][index]["materi"]);
+                                          },
+                                          child: Container(
+                                            height: 220,
+                                            width: 300,
+                                            child: Image.asset(
+                                              "assets/images/materi.png",
+                                              fit: BoxFit.contain,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        );
-                      },
-                    ),
+                          );
+                        },
+                      );
+                    }),
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 100, vertical: 20),
@@ -162,13 +184,15 @@ class MateriView extends GetView<MateriController> {
                                     fontSize: 18, color: Colors.white),
                               ),
                             ),
-                            Text(
-                              "Level 1",
-                              style: interFont.copyWith(
-                                  fontSize: 24,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600),
-                            ),
+                            Obx(() {
+                              return Text(
+                                "Level ${currentLevel.value + 1}",
+                                style: interFont.copyWith(
+                                    fontSize: 24,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600),
+                              );
+                            }),
                             Padding(
                               padding: const EdgeInsets.only(top: 30),
                               child: Container(
@@ -190,28 +214,65 @@ class MateriView extends GetView<MateriController> {
                                 color: Colors.white,
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 20),
-                              child: SizedBox(
-                                height: 50,
-                                width: 200,
-                                child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(50)),
-                                    backgroundColor: Color(0xFFFF384A),
-                                  ),
-                                  onPressed: () {
-                                    Get.toNamed(Routes.QUESTION,arguments:dataCon.dummyMateri[0] );
-                                  },
-                                  child: Text(
-                                    "Start Now",
-                                    style: interFont.copyWith(
-                                        fontSize: 14, color: Colors.white),
+                            Row(
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 20),
+                                  child: SizedBox(
+                                    height: 50,
+                                    width: 200,
+                                    child: ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(50)),
+                                        backgroundColor: Color(0xFFFF384A),
+                                      ),
+                                      onPressed: () {
+                                        Get.toNamed(Routes.QUESTION,
+                                            arguments: dataCon.dummyMateri2[0]["bab"][0]);
+                                      },
+                                      child: Text(
+                                        "Start Now",
+                                        style: interFont.copyWith(
+                                            fontSize: 14, color: Colors.white),
+                                      ),
+                                    ),
                                   ),
                                 ),
-                              ),
+                                SizedBox(
+                                  width: 40,
+                                ),
+                                Obx(
+                                  () => currentLevel.value <= 2
+                                      ? SizedBox(
+                                          height: 50,
+                                          width: 200,
+                                          child: ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          50)),
+                                              backgroundColor: Colors.white,
+                                            ),
+                                            onPressed: () {
+                                              controller.currentLevel++;
+                                              controller.scrollController
+                                                  .jumpTo(0);
+                                            },
+                                            child: Text(
+                                              "Next Level",
+                                              style: interFont.copyWith(
+                                                  fontSize: 14,
+                                                  color: Color(0xFFFF384A)),
+                                            ),
+                                          ),
+                                        )
+                                      : SizedBox(),
+                                )
+                              ],
                             ),
                             Obx(() {
                               return Container(
