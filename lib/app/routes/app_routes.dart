@@ -7,6 +7,10 @@ abstract class Routes {
   static const SIGN_IN = _Paths.SIGN_IN;
   static const DASHBOARD = _Paths.DASHBOARD;
   static const DETAILS = _Paths.DETAILS;
+  static const QUESTION = _Paths.QUESTION;
+  static const MYPROJECT = _Paths.MYPROJECT;
+  static const MATERI = _Paths.MATERI;
+  static const FEEDBACK = _Paths.FEEDBACK;
 }
 
 abstract class _Paths {
@@ -15,4 +19,8 @@ abstract class _Paths {
   static const SIGN_IN = '/sign-in';
   static const DASHBOARD = '/dashboard';
   static const DETAILS = '/details';
+  static const QUESTION = '/question';
+  static const MYPROJECT = '/myproject';
+  static const MATERI = '/materi';
+  static const FEEDBACK = '/feedback';
 }

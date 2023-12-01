@@ -59,7 +59,7 @@ class FooterWebsite extends StatelessWidget {
                 Container(
                   height: 40,
                   width: 283,
-                  child: Image.asset("images/sosmed.png",fit: BoxFit.contain),
+                  child: Image.network("https://firebasestorage.googleapis.com/v0/b/cresign-5e877.appspot.com/o/images%2Fsosmed.png?alt=media&token=a99e31f7-b7f0-442a-a749-6ba4a01e7e51",fit: BoxFit.contain),
                 )
               ],
             ),
@@ -75,7 +75,7 @@ class FooterWebsite extends StatelessWidget {
                 ),
                 SizedBox(height: 20,),
                 Container(
-                  height: 190,
+                  height: 220,
                   width: 292,
                   child: ListView.builder(
                     physics:  NeverScrollableScrollPhysics(),

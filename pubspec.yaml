@@ -17,6 +17,13 @@ dependencies:
   google_sign_in_web: 0.12.1
   cloud_firestore: ^4.13.0
   faker: 2.1.0
+  http: 1.1.0
+  cached_network_image: 3.3.0
+  chewie: 1.7.4
+  video_player_web: 2.1.2
+  pod_player: 0.2.1
+  youtube_player_iframe: 4.0.4
+  file_saver: 0.2.9
   flutter: 
     sdk: flutter
 
@@ -27,7 +34,57 @@ dev_dependencies:
 
 flutter: 
   assets: 
-    - assets/images/
-    - assets/lottie/
+    - assets/design/design1.png
+    - assets/design/design2.png
+    - assets/design/design3.png
+    - assets/design/design4.png
+    - assets/design/design5.png
+    - assets/design/design6.png
+    - assets/design/design7.png
+    - assets/design/design8.png
+    - assets/design/design9.png
+    - assets/design/design10.png
+    - assets/design/design11.png
+    - assets/design/design12.png
+    - assets/lottie/lottie1.json
+    - assets/lottie/lottie2.json
+    - assets/lottie/signin.json
+    - assets/person/person1.png
+    - assets/person/person2.png
+    - assets/person/person3.png
+    - assets/person/person4.png
+    - assets/person/person5.png
+    - assets/person/person6.png
+    - assets/person/person7.png
+    - assets/person/person8.png
+    - assets/person/person9.png
+    - assets/person/person10.png
+    - assets/person/person11.png
+    - assets/person/person12.png
+    - assets/images/background-element1.png
+    - assets/images/background-element2.png
+    - assets/images/background-element3.png
+    - assets/images/background-element8.png
+    - assets/images/circle1.png
+    - assets/images/down-arrow2.png
+    - assets/images/element1.png
+    - assets/images/Ellipse_14.png
+    - assets/images/Ellipse_15.png
+    - assets/images/Ellipse_16.png
+    - assets/images/google.png
+    - assets/images/images1.png
+    - assets/images/images2.png
+    - assets/images/images3.png
+    - assets/images/logo.png
+    - assets/images/person.png
+    - assets/images/sosmed.png
+    - assets/images/materi.png
+    - assets/video/video1.mp4
+    - assets/video/video2.mp4
+    - assets/video/video3.mp4
+    - assets/pdf/BAB_1.pdf
+    - assets/pdf/BAB_2.pdf
+    - assets/pdf/BAB_3.pdf
+    - assets/images/feedback.png
   uses-material-design: true
 

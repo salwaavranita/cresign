@@ -43,7 +43,7 @@ class HomeView extends GetView<HomeController> {
                             child: Container(
                                 width: 650,
                                 height: 550,
-                                child: Lottie.asset("lottie/lottie1.json",
+                                child: Lottie.asset("assets/lottie/lottie1.json",
                                     fit: BoxFit.cover)),
                           ),
                           Positioned(
@@ -120,7 +120,7 @@ class HomeView extends GetView<HomeController> {
                                 height: 260,
                                 width: 140,
                                 child: Image.asset(
-                                  "images/background-element2.png",
+                                  "assets/images/background-element2.png",
                                   fit: BoxFit.contain,
                                 )),
                           ),
@@ -131,7 +131,7 @@ class HomeView extends GetView<HomeController> {
                                 height: 250,
                                 width: 59,
                                 child: Image.asset(
-                                  "images/background-element8.png",
+                                  "assets/images/background-element8.png",
                                   fit: BoxFit.contain,
                                 )),
                           ),
@@ -142,7 +142,7 @@ class HomeView extends GetView<HomeController> {
                                 height: 150,
                                 width: 150,
                                 child: Image.asset(
-                                  "images/background-element3.png",
+                                  "assets/images/background-element3.png",
                                   fit: BoxFit.cover,
                                 )),
                           ),
@@ -153,7 +153,7 @@ class HomeView extends GetView<HomeController> {
                                 height: 62,
                                 width: 87,
                                 child: Image.asset(
-                                  "images/background-element1.png",
+                                  "assets/images/background-element1.png",
                                   fit: BoxFit.cover,
                                 )),
                           ),
@@ -164,7 +164,7 @@ class HomeView extends GetView<HomeController> {
                               height: 40,
                               width: 470,
                               child: Image.asset(
-                                "images/element1.png",
+                                "assets/images/element1.png",
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -176,7 +176,7 @@ class HomeView extends GetView<HomeController> {
                                 height: 130,
                                 width: 160,
                                 child: Image.asset(
-                                  "images/background-element1.png",
+                                  "assets/images/background-element1.png",
                                   fit: BoxFit.contain,
                                 )),
                           ),
@@ -186,7 +186,7 @@ class HomeView extends GetView<HomeController> {
                                 height: 91,
                                 width: 91,
                                 child: Image.asset(
-                                  "images/down-arrow2.png",
+                                  "assets/images/down-arrow2.png",
                                   fit: BoxFit.contain,
                                 )),
                           ),
@@ -195,7 +195,8 @@ class HomeView extends GetView<HomeController> {
                     ),
                     StartLearning(),
                     Container(
-                        height: 600,
+                        height: 610,
+                        width: Get.width,
                         color: Color(0xFF043873),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
@@ -265,7 +266,7 @@ class HomeView extends GetView<HomeController> {
                           ),
                         )),
                     Container(
-                      height: 980,
+                      height: 1000,
                       width: Get.width,
                       color: Color(0xFF75BBC6),
                       child: Padding(
@@ -284,7 +285,7 @@ class HomeView extends GetView<HomeController> {
                               height: 60,
                             ),
                             Container(
-                              height: 710,
+                              height: 800,
                               width: 1040,
                               child: GridView.builder(
                                 shrinkWrap: true,
@@ -294,7 +295,7 @@ class HomeView extends GetView<HomeController> {
                                         crossAxisCount: 2,
                                         crossAxisSpacing: 190,
                                         mainAxisSpacing: 60,
-                                        childAspectRatio: 420 / 320),
+                                        childAspectRatio: 450 / 360),
                                 itemBuilder: (context, index) {
                                   final title =
                                       dataCon.dummyAboutUs[index]["title"];
@@ -373,7 +374,7 @@ class HomeView extends GetView<HomeController> {
                                                           height: 55,
                                                           width: 55,
                                                           child: Image.asset(
-                                                            "images/person.png",
+                                                            "assets/images/person.png",
                                                             fit: BoxFit.contain,
                                                           )),
                                                     ],
@@ -395,7 +396,7 @@ class HomeView extends GetView<HomeController> {
                                                     Text(
                                                       major,
                                                       style: GoogleFonts.roboto(
-                                                          fontSize: 18,
+                                                          fontSize: 16,
                                                           fontStyle:
                                                               FontStyle.italic,
                                                           fontWeight:
@@ -463,7 +464,7 @@ class StartLearning extends StatelessWidget {
             child: Container(
                 width: 500,
                 height: 460,
-                child: Lottie.asset("lottie/lottie2.json", fit: BoxFit.cover)),
+                child: Lottie.asset("assets/lottie/lottie2.json", fit: BoxFit.cover)),
           ),
           Positioned(
             right: 192,
@@ -524,7 +525,7 @@ class StartLearning extends StatelessWidget {
                 height: 130,
                 width: 160,
                 child: Image.asset(
-                  "images/circle1.png",
+                  "assets/images/circle1.png",
                   fit: BoxFit.contain,
                 )),
           ),
@@ -535,7 +536,7 @@ class StartLearning extends StatelessWidget {
                 height: 130,
                 width: 160,
                 child: Image.asset(
-                  "images/circle1.png",
+                  "assets/images/circle1.png",
                   fit: BoxFit.contain,
                 )),
           ),
@@ -546,7 +547,7 @@ class StartLearning extends StatelessWidget {
                 height: 250,
                 width: 59,
                 child: Image.asset(
-                  "images/background-element8.png",
+                  "assets/images/background-element8.png",
                   fit: BoxFit.contain,
                 )),
           ),

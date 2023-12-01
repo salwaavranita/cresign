@@ -2,16 +2,18 @@ import 'package:cresign/app/controllers/data_controller.dart';
 import 'package:cresign/app/data/constraint/font.dart';
 import 'package:cresign/app/data/widgets/footer_website.dart';
 import 'package:cresign/app/data/widgets/navbar_website.dart';
+import 'package:cresign/app/modules/details/bindings/details_binding.dart';
 import 'package:cresign/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../details/controllers/details_controller.dart';
 import '../controllers/dashboard_controller.dart';
 
 class DashboardView extends GetView<DashboardController> {
   final dataCon = Get.find<DataController>();
-
+  final DetailCon = Get.put(DetailsController(), permanent: true);
   DashboardView({Key? key}) : super(key: key);
 
   @override
@@ -41,6 +43,8 @@ class DashboardView extends GetView<DashboardController> {
                         final likes = dataCon.dummyDesign[index]["likes"];
                         final views = dataCon.dummyDesign[index]["views"];
                         final profile = dataCon.dummyDesign[index]["profile"];
+                        final deskripsi = dataCon.dummyDesign[index]["deskripsi"];
+                        final about = dataCon.dummyDesign[index]["about"];
                         return Container(
                           child: Column(
                             children: [
@@ -50,6 +54,8 @@ class DashboardView extends GetView<DashboardController> {
                                     "name" : name,
                                     "images" : images,
                                     "profile" : profile,
+                                    "deskripsi" : deskripsi,
+                                    "about" : about
                                   });
                                 },
                                 child: Container(

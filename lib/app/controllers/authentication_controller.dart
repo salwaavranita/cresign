@@ -19,6 +19,8 @@ class AuthenticationController extends GetxController {
 
   RxBool isLogin = false.obs;
 
+
+
   Future<void> signInWithGoogle() async {
     try {
       await _googleSignIn.signOut();

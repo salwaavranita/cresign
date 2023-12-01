@@ -1,6 +1,7 @@
 import 'package:cresign/app/data/constraint/font.dart';
 import 'package:cresign/app/data/widgets/footer_website.dart';
 import 'package:cresign/app/data/widgets/navbar_website.dart';
+import 'package:cresign/app/modules/question/controllers/question_controller.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -11,6 +12,7 @@ import '../controllers/details_controller.dart';
 
 class DetailsView extends GetView<DetailsController> {
   final dataCon = Get.find<DataController>();
+  //final questionCon = Get.put(QuestionController());
 
   var data = Get.arguments;
   DetailsView({Key? key}) : super(key: key);
@@ -20,6 +22,8 @@ class DetailsView extends GetView<DetailsController> {
     var name = data["name"];
     var images = data["images"];
     var profile = data["profile"];
+    var deskripsi = data["deskripsi"];
+    var about = data["about"];
 
     return Scaffold(
       backgroundColor: Color(0xFF043873),
@@ -64,7 +68,7 @@ class DetailsView extends GetView<DetailsController> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      "Lorem Ipsum Desain",
+                                      about,
                                       style: interFont.copyWith(
                                           fontSize: 32, color: Colors.black),
                                     ),
@@ -115,11 +119,21 @@ class DetailsView extends GetView<DetailsController> {
                                       borderRadius: BorderRadius.circular(13),
                                     ),
                                   ),
-                                  child: Center(
-                                    child: Text("Save",
-                                        style: interFont.copyWith(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w500)),
+                                  child: InkWell(
+                                    onTap: () {
+                                      final addFavorite = controller.saveData(Get.arguments);
+                                      if(addFavorite["error"] == false){
+                                        Get.snackbar("Success", addFavorite["message"]);
+                                      }else{
+                                        Get.snackbar("Error", addFavorite["message"]);
+                                      }
+                                    },
+                                    child: Center(
+                                      child: Text("Save",
+                                          style: interFont.copyWith(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500)),
+                                    ),
                                   ),
                                 ),
                                 SizedBox(
@@ -163,9 +177,9 @@ class DetailsView extends GetView<DetailsController> {
                             SizedBox(
                               width: 757,
                               child: Text(
-                                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
+                                "${deskripsi}",
                                 style: interFont.copyWith(
-                                    fontSize: 24, fontWeight: FontWeight.w500),
+                                    fontSize: 18, fontWeight: FontWeight.w500),
                               ),
                             ),
                             SizedBox(
@@ -181,12 +195,14 @@ class DetailsView extends GetView<DetailsController> {
                                           borderRadius:
                                               BorderRadius.circular(35)),
                                       backgroundColor: Color(0xFFFF1665)),
-                                  onPressed: () {},
+                                  onPressed: () async {
+                                    Get.toNamed(Routes.MATERI);
+                                  },
                                   child: Text(
                                     "Pelajari Desain",
                                     style: interFont.copyWith(
                                         fontSize: 32,
-                                        fontWeight: FontWeight.w500),
+                                        fontWeight: FontWeight.w500,color: Colors.white),
                                   )),
                             ),
                             SizedBox(

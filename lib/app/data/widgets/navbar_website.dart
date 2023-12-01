@@ -17,7 +17,7 @@ class navbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 117,
+      height: 90,
       color: Color(0xFF043873),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 101),
@@ -26,7 +26,7 @@ class navbar extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-                height: 37, width: 48, child: Image.asset("images/logo.png")),
+                height: 37, width: 48, child: Image.network("https://firebasestorage.googleapis.com/v0/b/cresign-5e877.appspot.com/o/images%2Flogo.png?alt=media&token=bf8303b3-a506-41bc-b02f-ec9c7ce1891c")),
             Text(
               "CreSign",
               style: interFont.copyWith(
@@ -42,6 +42,7 @@ class navbar extends StatelessWidget {
             InkWell(
               onTap: () {
                 dataCon.scrollTo(0);
+                Get.toNamed(Routes.HOME);
               },
               child: Text(
                 "Home",
@@ -52,7 +53,9 @@ class navbar extends StatelessWidget {
               width: 32,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(Routes.DASHBOARD);
+              },
               child: Text(
                 "Dashboard",
                 style: interFont.copyWith(fontSize: 18, color: Colors.white),
@@ -137,7 +140,10 @@ class navbar extends StatelessWidget {
                               ? BorderRadius.circular(15)
                               : BorderRadius.circular(40),
                         )),
-                    onPressed: () {},
+                    onPressed: () {
+                      print("myproject");
+                      Get.toNamed(Routes.MYPROJECT);
+                    },
                     child: authCon.isAuth.isTrue
                         ? Text(
                       "My Project",
@@ -149,7 +155,7 @@ class navbar extends StatelessWidget {
                         : Text(
                       "Register",
                       style: interFont.copyWith(
-                          fontSize: 17, fontWeight: FontWeight.w700),
+                          fontSize: 17, fontWeight: FontWeight.w700,color: Colors.white),
                     )),
               );
             }),

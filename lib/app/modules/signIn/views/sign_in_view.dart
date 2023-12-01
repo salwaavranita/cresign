@@ -41,7 +41,7 @@ class SignInView extends GetView<SignInController> {
                           Container(
                               height: 37,
                               width: 48,
-                              child: Image.asset("images/logo.png")),
+                              child: Image.asset("assets/images/logo.png")),
                           Text(
                             "CreSign",
                             style: interFont.copyWith(
@@ -123,7 +123,7 @@ class SignInView extends GetView<SignInController> {
                               SizedBox(
                                 height: 48,
                                 width: 48,
-                                child: Image.asset("images/google.png",
+                                child: Image.asset("assets/images/google.png",
                                     fit: BoxFit.contain),
                               )
                             ],
